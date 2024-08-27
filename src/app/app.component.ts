@@ -34,6 +34,10 @@ export class AppComponent {
       this.form.patchValue({product: product.title + ' (' + product.price + ' ' + this.currency + ')'});
     };
   }
+  switchSugarFree(e: any) {
+  this.http.get("https://testologia.ru/cookies" + (e.currentTarget.checked ? '?sugarfree' : ''))
+    .subscribe(data => this.productsData = data);
+  }
 
 
   changeCurrency() {

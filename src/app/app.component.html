@@ -46,6 +46,13 @@
             <div class="items-title">
                 Выберите печенье
             </div>
+            
+            <div class="sugar-free">
+                <div>Все</div>
+                <input type="checkbox" id="switch" (change)="switchSugarFree($event)" />
+                <label for="switch"></label>
+                <div>Без сахара</div>
+            </div>
 
             <div class="cookie-items">
               <div class="cookie-item" *ngFor="let product of productsData">
