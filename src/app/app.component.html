@@ -50,7 +50,7 @@
             <div class="cookie-items">
               <div class="cookie-item" *ngFor="let product of productsData">
                 <div class="coolie__container-text">
-                    <img src="./assets/images/{{product.image}}" alt="Cookie" class="cookie-image">
+                    <img src="{{product.image}}" alt="Cookie" class="cookie-image">
                     <div class="cookie-name">{{product.title}}</div>
                     <div class="cookie-description">{{product.text}}</div>
                 </div>
@@ -63,8 +63,8 @@
                         <a >Заказать</a>
                     </div>
                 </div>
-          </div>
-          </div>
+            </div>
+        </div>
         </div>
     </section>
 <!-- ITEMS END  -->
@@ -99,7 +99,7 @@
                     Откройте для себя волшебство вкуса с нашим премиальным печеньем! Закажите прямо сейчас и окунитесь в мир сладких наслаждений. 
                 </div>
                 <div class="order__form-inputs" [formGroup]="form">
-                    <input type="text" id="product" placeholder="Шоколадный ореховый деликатес" formControlName="product" [class]="{'error': form.get('product')?.invalid && (form.get('product')?.dirty || form.get('product')?.touched)}" readonly>
+                    <input type="text" id="product" placeholder="Выберите печенье" formControlName="product" [class]="{'error': form.get('product')?.invalid && (form.get('product')?.dirty || form.get('product')?.touched)}" readonly>
                     <input type="text" id="name" placeholder="Ваше имя" formControlName="name" [class]="{'error': form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)}">
                     <input type="text" id="phone" placeholder="Ваш телефон" formControlName="phone" [class]="{'error': form.get('phone')?.invalid && (form.get('phone')?.dirty || form.get('phone')?.touched)}">
                     <button (click)="confirmOrder()" [disabled]="!form.valid" id="order-action" class="button">
